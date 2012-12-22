@@ -63,3 +63,14 @@ echo "wish to build your fusion drive with.\n\n";
 echo "This is a list of the Disk that are on your mac.\n";
 echo "Look at the size of all the drive.";
 echo "once you have found the drives you wish to build your fusion drive with look to the right of the SIZE column and you will see the IDENTIFIER column.";
+
+clear;
+
+name=$(diskutil list | grep /disk[0]);
+name2=$(diskutil list | grep /disk[1]);
+
+
+echo $name;
+echo $name2;
+
+
