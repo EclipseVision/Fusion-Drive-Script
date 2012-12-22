@@ -6,8 +6,9 @@
 #  Created by Dustin Harle on 12/16/12.
 #
 
+#clear the screen before starting
+clear;
 
-#This will show the list Disk on your mac
 
 echo "-------------------------------------------";
 echo "|  F U S I O N  D R I V E  B U I L D E R  |";
@@ -52,6 +53,8 @@ read next;
 
 clear;
 
+
+#This will show the list Disk on your mac
 diskutil list;
 
 
@@ -72,5 +75,28 @@ name2=$(diskutil list | grep /disk[1]);
 
 echo $name;
 echo $name2;
+
+namecount=$(diskutil list | grep -c /disk);
+
+echo $namecount;
+
+count=0
+
+#test for loop
+while (($count != $namecount));
+do
+name=$(diskutil list | grep /disk[$count]);
+echo "Welcome $name times"
+
+
+count=$(($count + 1));
+
+done
+
+
+
+
+
+
 
 
